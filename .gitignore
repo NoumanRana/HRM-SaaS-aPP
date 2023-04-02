@@ -1,5 +1,3 @@
-*.vsidx
-
 # Build results
 [Dd]ebug/
 [Rr]elease/
@@ -15,6 +13,7 @@ build/
 *.opendb
 *.suo
 *.sln.docstates
+*.vsidx
 
 # Resharper files
 _ReSharper.*
