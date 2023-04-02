@@ -1,1 +1,58 @@
 *.vsidx
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio files
+*.user
+*.aps
+*.ncb
+*.opendb
+*.suo
+*.sln.docstates
+
+# Resharper files
+_ReSharper.*
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# NuGet packages
+packages/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+
+# Installshield output folder 
+[Ee]xpress/
+
+# DocProject file 
+**/*.DocProject
+
+# TeamCity 
+_TeamCity*
+
+# DotCover 
+*.dotCover
+
+# AxoCover 
+.axoCover/*
+!.axoCover/settings.json
+
+# Coverlet
+coverage*/
