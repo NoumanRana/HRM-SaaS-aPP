@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+*.vsidx
+
+>>>>>>> 394782fbca3149439f8655a781a01e8c94614d29
 # Build results
 [Dd]ebug/
 [Rr]elease/
@@ -13,7 +18,10 @@ build/
 *.opendb
 *.suo
 *.sln.docstates
+<<<<<<< HEAD
 *.vsidx
+=======
+>>>>>>> 394782fbca3149439f8655a781a01e8c94614d29
 
 # Resharper files
 _ReSharper.*
