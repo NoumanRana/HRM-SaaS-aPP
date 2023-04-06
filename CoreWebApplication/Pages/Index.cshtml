@@ -1,0 +1,44 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+ 
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+
+        <form method="post" class="needs-validation form-controls" onsubmit="return validateForm()" novalidate>
+        <div class="form-row col-md-12">
+          
+                <label for="NameInput" class="col-md-2"><b>Your Name: </b></label>
+                <input type="text" id="NameInput" name="Name" class="col-md-8" required>
+                <div class="invalid-feedback">
+                    Please enter your name.
+                </div>
+   
+            <!-- add more form groups here as needed -->
+        </div>
+        <button type="submit" class="btn btn-primary ">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("NameInput").value;
+            if (name == "") {
+                alert("Please enter your name.");
+                return false;
+            }
+        }
+    </script>
+
+
+    @if (Model.Name != null)
+    {
+        <div class="alert alert-success" role="alert">
+           Hey @Model.Name, welcome!
+        </div>
+    }
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
