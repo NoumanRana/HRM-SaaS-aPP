@@ -24,8 +24,7 @@ namespace CoreWebApplication.Pages
 
        public void OnPost()
         {
-     
-            Name = Request.Form["Name"];
+                 Name = Request.Form["Name"];
         }
 
 
