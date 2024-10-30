@@ -1,0 +1,109 @@
+﻿@model Indotalent.Recruitment.InterviewPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Interview: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.JobTitle</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.VacancyNumber</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.ApplicantName</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Interview Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Room:</td>
+                        <td>@Model.Header.Room</td>
+                    </tr>
+                    <tr>
+                        <td>Start:</td>
+                        <td>@Model.Header.StartDate.Value.ToShortDateString() @Model.Header.StartDate.Value.ToShortTimeString()</td>
+                    </tr>
+                    <tr>
+                        <td>End:</td>
+                        <td>@Model.Header.EndDate.Value.ToShortDateString() @Model.Header.EndDate.Value.ToShortTimeString()</td>
+                    </tr>
+                    <tr>
+                        <td>Street:</td>
+                        <td>@Model.Header.Street</td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td>@Model.Header.City</td>
+                    </tr>
+                    <tr>
+                        <td>State:</td>
+                        <td>@Model.Header.State</td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>@Model.Header.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Model.Header.Email</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Results</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Results)
+                            {
+                                <tr>
+                                    <td>@d.ResultName @d.ResultScore</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

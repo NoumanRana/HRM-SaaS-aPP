@@ -1,0 +1,80 @@
+﻿@model Indotalent.Operation.AssetHandOverPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                AssetHandOver: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.Description</h3>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Asset Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Tag Number:</td>
+                        <td>@Model.Header.AssetTagNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Serial Number:</td>
+                        <td>@Model.Header.SerialNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Model:</td>
+                        <td>@Model.Header.Model</td>
+                    </tr>
+                    <tr>
+                        <td>Production Year:</td>
+                        <td>@Model.Header.ProductionYear</td>
+                    </tr>
+                    <tr>
+                        <td>Manufactur:</td>
+                        <td>@Model.Header.Manufacturer</td>
+                    </tr>
+                    <tr>
+                        <td>Asset Number:</td>
+                        <td>@Model.Header.AssetNumber</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Hand Over Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Hand Over By:</td>
+                        <td>@Model.Header.HandOverByName</td>
+                    </tr>
+                    <tr>
+                        <td>Hand Over To:</td>
+                        <td>@Model.Header.HandOverToName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+        <div class="col-xs-12">
+        </div>
+    </div>
+</section>

@@ -1,0 +1,694 @@
+{
+  "RootNamespace": "Indotalent",
+  "ServerTypings": {
+    "LocalTexts": true
+  },
+  "Restore": {
+    "Exclude": [
+      "/wwwroot/Scripts/serenity/Serenity.CoreLib*.*"
+    ]
+  },
+  "Connections": [
+    {
+      "Key": "Default",
+      "Tables": [
+        {
+          "Tablename": "dbo.Announcement",
+          "Identifier": "Announcement",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Announcement"
+        },
+        {
+          "Tablename": "dbo.Applicant",
+          "Identifier": "Applicant",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Applicant"
+        },
+        {
+          "Tablename": "dbo.ApplicantEducation",
+          "Identifier": "ApplicantEducation",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Applicant"
+        },
+        {
+          "Tablename": "dbo.ApplicantExperience",
+          "Identifier": "ApplicantExperience",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Applicant"
+        },
+        {
+          "Tablename": "dbo.ApplicantTopSkill",
+          "Identifier": "ApplicantTopSkill",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Applicant"
+        },
+        {
+          "Tablename": "dbo.Appraisal",
+          "Identifier": "Appraisal",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Appraisal"
+        },
+        {
+          "Tablename": "dbo.AppraisalDetail",
+          "Identifier": "AppraisalDetail",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Appraisal"
+        },
+        {
+          "Tablename": "dbo.Asset",
+          "Identifier": "Asset",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Asset"
+        },
+        {
+          "Tablename": "dbo.AssetHandOver",
+          "Identifier": "AssetHandOver",
+          "Module": "Operation",
+          "PermissionKey": "Operation:AssetHandOver"
+        },
+        {
+          "Tablename": "dbo.Award",
+          "Identifier": "Award",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Award"
+        },
+        {
+          "Tablename": "dbo.Bill",
+          "Identifier": "Bill",
+          "Module": "Purchase",
+          "PermissionKey": "Purchase:Bill"
+        },
+        {
+          "Tablename": "dbo.BillDetail",
+          "Identifier": "BillDetail",
+          "Module": "Purchase",
+          "PermissionKey": "Purchase:Bill"
+        },
+        {
+          "Tablename": "dbo.BillPayment",
+          "Identifier": "BillPayment",
+          "Module": "Purchase",
+          "PermissionKey": "Purchase:BillPayment"
+        },
+        {
+          "Tablename": "dbo.Branch",
+          "Identifier": "Branch",
+          "Module": "Organization",
+          "PermissionKey": "Organization:Branch"
+        },
+        {
+          "Tablename": "dbo.Brand",
+          "Identifier": "Brand",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Brand"
+        },
+        {
+          "Tablename": "dbo.BusinessTrip",
+          "Identifier": "BusinessTrip",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:BusinessTrip"
+        },
+        {
+          "Tablename": "dbo.BusinessTripParticipant",
+          "Identifier": "BusinessTripParticipant",
+          "Module": "Operation",
+          "PermissionKey": "Operation:BusinessTrip"
+        },
+        {
+          "Tablename": "dbo.CashBank",
+          "Identifier": "CashBank",
+          "Module": "Settings",
+          "PermissionKey": "Settings:CashBank"
+        },
+        {
+          "Tablename": "dbo.Category",
+          "Identifier": "Category",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Category"
+        },
+        {
+          "Tablename": "dbo.Colour",
+          "Identifier": "Colour",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Colour"
+        },
+        {
+          "Tablename": "dbo.Complaint",
+          "Identifier": "Complaint",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Complaint"
+        },
+        {
+          "Tablename": "dbo.Customer",
+          "Identifier": "Customer",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Customer"
+        },
+        {
+          "Tablename": "dbo.CustomerContact",
+          "Identifier": "CustomerContact",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Customer"
+        },
+        {
+          "Tablename": "dbo.Deduction",
+          "Identifier": "Deduction",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Deduction"
+        },
+        {
+          "Tablename": "dbo.Department",
+          "Identifier": "Department",
+          "Module": "Organization",
+          "PermissionKey": "Organization:Department"
+        },
+        {
+          "Tablename": "dbo.Designation",
+          "Identifier": "Designation",
+          "Module": "Organization",
+          "PermissionKey": "Organization:Designation"
+        },
+        {
+          "Tablename": "dbo.Employee",
+          "Identifier": "Employee",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeChildren",
+          "Identifier": "EmployeeChildren",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeDeduction",
+          "Identifier": "EmployeeDeduction",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeDocument",
+          "Identifier": "EmployeeDocument",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeEducation",
+          "Identifier": "EmployeeEducation",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeExperience",
+          "Identifier": "EmployeeExperience",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeIncome",
+          "Identifier": "EmployeeIncome",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeJobDescription",
+          "Identifier": "EmployeeJobDescription",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeKpi",
+          "Identifier": "EmployeeKpi",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeOkrObjective",
+          "Identifier": "EmployeeOkrObjective",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeOkrResult",
+          "Identifier": "EmployeeOkrResult",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeParent",
+          "Identifier": "EmployeeParent",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.EmployeeTopSkill",
+          "Identifier": "EmployeeTopSkill",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Employee"
+        },
+        {
+          "Tablename": "dbo.Evaluation",
+          "Identifier": "Evaluation",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Evaluation"
+        },
+        {
+          "Tablename": "dbo.Event",
+          "Identifier": "Event",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Event"
+        },
+        {
+          "Tablename": "dbo.Flavour",
+          "Identifier": "Flavour",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Flavour"
+        },
+        {
+          "Tablename": "dbo.Gender",
+          "Identifier": "Gender",
+          "Module": "Settings",
+          "PermissionKey": "Settings:Gender"
+        },
+        {
+          "Tablename": "dbo.Grade",
+          "Identifier": "Grade",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Grade"
+        },
+        {
+          "Tablename": "dbo.Holiday",
+          "Identifier": "Holiday",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Holiday"
+        },
+        {
+          "Tablename": "dbo.Income",
+          "Identifier": "Income",
+          "Module": "Payrolls",
+          "PermissionKey": "Payrolls:Income"
+        },
+        {
+          "Tablename": "dbo.Interview",
+          "Identifier": "Interview",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Interview"
+        },
+        {
+          "Tablename": "dbo.InterviewResult",
+          "Identifier": "InterviewResult",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Interview"
+        },
+        {
+          "Tablename": "dbo.Invoice",
+          "Identifier": "Invoice",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Invoice"
+        },
+        {
+          "Tablename": "dbo.InvoiceDetail",
+          "Identifier": "InvoiceDetail",
+          "Module": "Sales",
+          "PermissionKey": "Sales:Invoice"
+        },
+        {
+          "Tablename": "dbo.InvoicePayment",
+          "Identifier": "InvoicePayment",
+          "Module": "Sales",
+          "PermissionKey": "Sales:InvoicePayment"
+        },
+        {
+          "Tablename": "dbo.LeaveDelegatedTask",
+          "Identifier": "LeaveDelegatedTask",
+          "Module": "Leave",
+          "PermissionKey": "Leave:LeaveRequest"
+        },
+        {
+          "Tablename": "dbo.LeaveEmergencyContact",
+          "Identifier": "LeaveEmergencyContact",
+          "Module": "Leave",
+          "PermissionKey": "Leave:LeaveRequest"
+        },
+        {
+          "Tablename": "dbo.LeaveRequest",
+          "Identifier": "LeaveRequest",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Leave"
+        },
+        {
+          "Tablename": "dbo.LeaveType",
+          "Identifier": "LeaveType",
+          "Module": "Leave",
+          "PermissionKey": "Leave:LeaveType"
+        },
+        {
+          "Tablename": "dbo.Location",
+          "Identifier": "Location",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:Location"
+        },
+        {
+          "Tablename": "dbo.Meeting",
+          "Identifier": "Meeting",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Meeting"
+        },
+        {
+          "Tablename": "dbo.MeetingParticipant",
+          "Identifier": "MeetingParticipant",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Meeting"
+        },
+        {
+          "Tablename": "dbo.NegativeAdjustment",
+          "Identifier": "NegativeAdjustment",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:NegativeAdjustment"
+        },
+        {
+          "Tablename": "dbo.NegativeAdjustmentDetail",
+          "Identifier": "NegativeAdjustmentDetail",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:NegativeAdjustment"
+        },
+        {
+          "Tablename": "dbo.Overtime",
+          "Identifier": "Overtime",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Overtime"
+        },
+        {
+          "Tablename": "dbo.Payroll",
+          "Identifier": "Payroll",
+          "Module": "Payrolls",
+          "PermissionKey": "Payroll"
+        },
+        {
+          "Tablename": "dbo.PayrollDetail",
+          "Identifier": "PayrollDetail",
+          "Module": "Payrolls",
+          "PermissionKey": "Payroll"
+        },
+        {
+          "Tablename": "dbo.PayrollDetailDeduction",
+          "Identifier": "PayrollDetailDeduction",
+          "Module": "Payrolls",
+          "PermissionKey": "Payroll"
+        },
+        {
+          "Tablename": "dbo.PayrollDetailIncome",
+          "Identifier": "PayrollDetailIncome",
+          "Module": "Payrolls",
+          "PermissionKey": "Payroll"
+        },
+        {
+          "Tablename": "dbo.PositiveAdjustment",
+          "Identifier": "PositiveAdjustment",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:PositiveAdjustment"
+        },
+        {
+          "Tablename": "dbo.PositiveAdjustmentDetail",
+          "Identifier": "PositiveAdjustmentDetail",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:PositiveAdjustment"
+        },
+        {
+          "Tablename": "dbo.Product",
+          "Identifier": "Product",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Product"
+        },
+        {
+          "Tablename": "dbo.Promotion",
+          "Identifier": "Promotion",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Promotion"
+        },
+        {
+          "Tablename": "dbo.PromotionCompetency",
+          "Identifier": "PromotionCompetency",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Promotion"
+        },
+        {
+          "Tablename": "dbo.PromotionReason",
+          "Identifier": "PromotionReason",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Promotion"
+        },
+        {
+          "Tablename": "dbo.Punch",
+          "Identifier": "PunchOut",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:PunchOut"
+        },
+        {
+          "Tablename": "dbo.PurchaseOrder",
+          "Identifier": "PurchaseOrder",
+          "Module": "Purchase",
+          "PermissionKey": "Purchase:PurchaseOrder"
+        },
+        {
+          "Tablename": "dbo.PurchaseOrderDetail",
+          "Identifier": "PurchaseOrderDetail",
+          "Module": "Purchase",
+          "PermissionKey": "Purchase:PurchaseOrder"
+        },
+        {
+          "Tablename": "dbo.PurchaseReceipt",
+          "Identifier": "PurchaseReceipt",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:PurchaseReceipt"
+        },
+        {
+          "Tablename": "dbo.PurchaseReceiptDetail",
+          "Identifier": "PurchaseReceiptDetail",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:PurchaseReceipt"
+        },
+        {
+          "Tablename": "dbo.PurchaseReturn",
+          "Identifier": "PurchaseReturn",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:PurchaseReturn"
+        },
+        {
+          "Tablename": "dbo.PurchaseReturnDetail",
+          "Identifier": "PurchaseReturnDetail",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:PurchaseReturn"
+        },
+        {
+          "Tablename": "dbo.PurchaseTax",
+          "Identifier": "PurchaseTax",
+          "Module": "Settings",
+          "PermissionKey": "Settings:PurchaseTax"
+        },
+        {
+          "Tablename": "dbo.Reimbursement",
+          "Identifier": "Reimbursement",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Reimbursement"
+        },
+        {
+          "Tablename": "dbo.ReimbursementDetail",
+          "Identifier": "ReimbursementDetail",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Reimbursement"
+        },
+        {
+          "Tablename": "dbo.Resignation",
+          "Identifier": "Resignation",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Resignation"
+        },
+        {
+          "Tablename": "dbo.SalesChannel",
+          "Identifier": "SalesChannel",
+          "Module": "Sales",
+          "PermissionKey": "Sales:SalesChannel"
+        },
+        {
+          "Tablename": "dbo.SalesDelivery",
+          "Identifier": "SalesDelivery",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:SalesDelivery"
+        },
+        {
+          "Tablename": "dbo.SalesDeliveryDetail",
+          "Identifier": "SalesDeliveryDetail",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:SalesDelivery"
+        },
+        {
+          "Tablename": "dbo.SalesOrder",
+          "Identifier": "SalesOrder",
+          "Module": "Sales",
+          "PermissionKey": "Sales:SalesOrder"
+        },
+        {
+          "Tablename": "dbo.SalesOrderDetail",
+          "Identifier": "SalesOrderDetail",
+          "Module": "Sales",
+          "PermissionKey": "Sales:SalesOrder"
+        },
+        {
+          "Tablename": "dbo.SalesReturn",
+          "Identifier": "SalesReturn",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:SalesReturn"
+        },
+        {
+          "Tablename": "dbo.SalesReturnDetail",
+          "Identifier": "SalesReturnDetail",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:SalesReturn"
+        },
+        {
+          "Tablename": "dbo.SalesTax",
+          "Identifier": "SalesTax",
+          "Module": "Settings",
+          "PermissionKey": "Settings:SalesTax"
+        },
+        {
+          "Tablename": "dbo.Shipper",
+          "Identifier": "Shipper",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:Shipper"
+        },
+        {
+          "Tablename": "dbo.Size",
+          "Identifier": "Size",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Size"
+        },
+        {
+          "Tablename": "dbo.SOP",
+          "Identifier": "SOP",
+          "Module": "Operation",
+          "PermissionKey": "Operation:SOP"
+        },
+        {
+          "Tablename": "dbo.Tenant",
+          "Identifier": "MyCompany",
+          "Module": "Settings",
+          "PermissionKey": "Settings:MyCompany"
+        },
+        {
+          "Tablename": "dbo.Termination",
+          "Identifier": "Termination",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Termination"
+        },
+        {
+          "Tablename": "dbo.Ticket",
+          "Identifier": "Ticket",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Ticket"
+        },
+        {
+          "Tablename": "dbo.TicketDetail",
+          "Identifier": "TicketDetail",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Ticket"
+        },
+        {
+          "Tablename": "dbo.Training",
+          "Identifier": "Training",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Training"
+        },
+        {
+          "Tablename": "dbo.TrainingParticipant",
+          "Identifier": "TrainingParticipant",
+          "Module": "Operation",
+          "PermissionKey": "Operation:Training"
+        },
+        {
+          "Tablename": "dbo.Transfer",
+          "Identifier": "Transfer",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Transfer"
+        },
+        {
+          "Tablename": "dbo.TransferCompetency",
+          "Identifier": "TransferCompetency",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Transfer"
+        },
+        {
+          "Tablename": "dbo.TransferOrder",
+          "Identifier": "TransferOrder",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:TransferOrder"
+        },
+        {
+          "Tablename": "dbo.TransferOrderDetail",
+          "Identifier": "TransferOrderDetail",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:TransferOrder"
+        },
+        {
+          "Tablename": "dbo.TransferReason",
+          "Identifier": "TransferReason",
+          "Module": "Performance",
+          "PermissionKey": "Performance:Transfer"
+        },
+        {
+          "Tablename": "dbo.Uom",
+          "Identifier": "Uom",
+          "Module": "Merchandise",
+          "PermissionKey": "Merchandise:Uom"
+        },
+        {
+          "Tablename": "dbo.Vacancy",
+          "Identifier": "Vacancy",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Vacancy"
+        },
+        {
+          "Tablename": "dbo.VacancyBenefit",
+          "Identifier": "VacancyBenefit",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Vacancy"
+        },
+        {
+          "Tablename": "dbo.VacancyRequirement",
+          "Identifier": "VacancyRequirement",
+          "Module": "Recruitment",
+          "PermissionKey": "Recruitment:Vacancy"
+        },
+        {
+          "Tablename": "dbo.Vendor",
+          "Identifier": "Vendor",
+          "Module": "Purchase",
+          "PermissionKey": "Purchase:Vendor"
+        },
+        {
+          "Tablename": "dbo.VendorContact",
+          "Identifier": "VendorContact",
+          "Module": "Purchase",
+          "PermissionKey": "Purchase:VendorContact"
+        },
+        {
+          "Tablename": "dbo.Warehouse",
+          "Identifier": "Warehouse",
+          "Module": "Inventory",
+          "PermissionKey": "Inventory:Warehouse"
+        },
+        {
+          "Tablename": "dbo.Warning",
+          "Identifier": "Warning",
+          "Module": "EmployeeSelfService",
+          "PermissionKey": "EmployeeSelfService:Warning"
+        }
+      ]
+    }
+  ],
+  "UpgradeInfo": {
+    "InitialType": "Community",
+    "InitialVersion": "5.0.51.8"
+  }
+}

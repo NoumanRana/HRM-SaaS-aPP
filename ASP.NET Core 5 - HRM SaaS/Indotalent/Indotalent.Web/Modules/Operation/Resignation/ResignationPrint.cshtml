@@ -1,0 +1,64 @@
+﻿@model Indotalent.Operation.ResignationPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Resignation: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.ResigneeName</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Resignation Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Resignation Date:</td>
+                        <td>@Model.Header.ResignationDate.Value.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Effective Date:</td>
+                        <td>@Model.Header.EffectiveDate.Value.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td>@Model.Header.Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Organization Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Branch:</td>
+                        <td>@Model.Header.BranchName</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td>@Model.Header.DepartmentName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

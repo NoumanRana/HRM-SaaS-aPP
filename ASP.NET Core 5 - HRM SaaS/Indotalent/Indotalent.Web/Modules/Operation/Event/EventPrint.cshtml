@@ -1,0 +1,80 @@
+﻿@model Indotalent.Operation.EventPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Event: @Model.Header.Name
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.Description</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Event Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Start Date:</td>
+                        <td>@Model.Header.StartDate</td>
+                    </tr>
+                    <tr>
+                        <td>End Date:</td>
+                        <td>@Model.Header.EndDate</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Location Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Location:</td>
+                        <td>@Model.Header.Location</td>
+                    </tr>
+                    <tr>
+                        <td>Street:</td>
+                        <td>@Model.Header.Street</td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td>@Model.Header.City</td>
+                    </tr>
+                    <tr>
+                        <td>State:</td>
+                        <td>@Model.Header.State</td>
+                    </tr>
+                    <tr>
+                        <td>ZipCode:</td>
+                        <td>@Model.Header.ZipCode</td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>@Model.Header.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Model.Header.Email</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

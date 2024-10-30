@@ -1,0 +1,85 @@
+﻿@model Indotalent.Operation.WarningPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Warning: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Warning Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Warning Date:</td>
+                        <td>@Model.Header.WarningDate.Value.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Due Corrective Date:</td>
+                        <td>@Model.Header.CorrectiveDate.Value.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td>@Model.Header.Description</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Employee Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Name:</td>
+                        <td>@Model.Header.EmployeeName</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td>@Model.Header.DepartmentName</td>
+                    </tr>
+                    <tr>
+                        <td>Branch:</td>
+                        <td>@Model.Header.BranchName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Reason Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Warning Reasons:</td>
+                        <td>@Html.Raw(Model.Header.WarningReason)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Corrective Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Corrective Actions:</td>
+                        <td>@Html.Raw(Model.Header.CorrectiveAction)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

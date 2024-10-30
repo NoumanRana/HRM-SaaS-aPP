@@ -1,0 +1,141 @@
+﻿@model Indotalent.Performance.TransferPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Transfer: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.EmployeeName</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Transfer Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Promotor Name:</td>
+                        <td>@Model.Header.PromotorName</td>
+                    </tr>
+                    <tr>
+                        <td>Effective Date:</td>
+                        <td>@Model.Header.EffectiveDate.Value.ToShortDateString()</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Current Condition</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Salary:</td>
+                        <td>@Model.Header.CurrentBasicSalary</td>
+                    </tr>
+                    <tr>
+                        <td>Designation:</td>
+                        <td>@Model.Header.CurrentDesignationName</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td>@Model.Header.CurrentDepartmentName</td>
+                    </tr>
+                    <tr>
+                        <td>Branch:</td>
+                        <td>@Model.Header.CurrentBranchName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>New Condition</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Salary:</td>
+                        <td>@Model.Header.NewBasicSalary</td>
+                    </tr>
+                    <tr>
+                        <td>Designation:</td>
+                        <td>@Model.Header.NewDesignationName</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td>@Model.Header.NewDepartmentName</td>
+                    </tr>
+                    <tr>
+                        <td>Branch:</td>
+                        <td>@Model.Header.NewBranchName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Reasons</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Reasons)
+                            {
+                                <tr>
+                                    <td>@d.ShortNote</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Competencies</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Competency</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Competencies)
+                            {
+                                <tr>
+                                    <td>@d.ShortNote</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,90 @@
+﻿@model Indotalent.Performance.AppraisalPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Appraisal: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.EmployeeName</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Appraisal Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Evaluator:</td>
+                        <td>@Model.Header.EvaluatorName</td>
+                    </tr>
+                    <tr>
+                        <td>Appraisal Date:</td>
+                        <td>@Model.Header.CurrentAppraisalDate.Value.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Last Appraisal Date:</td>
+                        <td>@Model.Header.LastAppraisalDate.Value.ToShortDateString()</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Appraisal Result</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Comment:</td>
+                        <td>@Model.Header.Comment</td>
+                    </tr>
+                    <tr>
+                        <td>Recomendation:</td>
+                        <td>@Model.Header.Recomendation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Appraisal Details</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Evaluation</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Details)
+                            {
+                                <tr>
+                                    <td>@($"{d.EvaluationNumber} - {d.EvaluationGroup} - {d.EvaluationIndicator}. Result: {d.EvaluationResult}.")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

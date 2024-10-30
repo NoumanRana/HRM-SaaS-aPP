@@ -1,0 +1,94 @@
+﻿@model Indotalent.Operation.ReimbursementPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Reimbursement: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.EmployeeName</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Reimbursement Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Date:</td>
+                        <td>@Model.Header.TransactionDate.Value.ToShortDateString()</td>
+                    </tr>
+                    <tr>
+                        <td>Description:</td>
+                        <td>@Model.Header.Description</td>
+                    </tr>
+                    <tr>
+                        <td>Currency:</td>
+                        <td>@Model.Header.CurrencyName</td>
+                    </tr>
+                    <tr>
+                        <td>Total:</td>
+                        <td>@Model.Header.TotalAmount.Value.ToString("##,##.00")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Organization Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Branch:</td>
+                        <td>@Model.Header.BranchName</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td>@Model.Header.DepartmentName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Details</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Details)
+                            {
+                                <tr>
+                                    <td>@($"{d.ShortNote}: {d.Amount.Value.ToString("##,##.00")}")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

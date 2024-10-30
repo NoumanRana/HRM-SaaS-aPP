@@ -1,0 +1,7 @@
+{
+  "Forms.Membership.Login.FormTitle": "Welcome to Multitenant HRM Platform",
+  "Forms.Membership.ResetPassword.EmailSubject": "Reset your SaaS HRM Password",
+  "Forms.Membership.SignUp.ActivateEmailSubject": "Activate your SaaS HRM Account",
+  "Forms.Membership.SignUp.FormTitle": "Sign up for SaaS HRM",
+  "Navigation.SiteTitle": "SaaS HRM"
+}

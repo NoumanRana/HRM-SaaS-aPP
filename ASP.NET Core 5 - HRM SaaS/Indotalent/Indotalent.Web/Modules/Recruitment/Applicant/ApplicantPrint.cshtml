@@ -1,0 +1,112 @@
+﻿@model Indotalent.Recruitment.ApplicantPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Applicant: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.JobTitle</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.VacancyNumber</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Applicant Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Name:</td>
+                        <td>@Model.Header.Name</td>
+                    </tr>
+                    <tr>
+                        <td>Street:</td>
+                        <td>@Model.Header.Street</td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td>@Model.Header.City</td>
+                    </tr>
+                    <tr>
+                        <td>State:</td>
+                        <td>@Model.Header.State</td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>@Model.Header.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Model.Header.Email</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Educations</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Education</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Educations)
+                            {
+                                <tr>
+                                    <td>@d.SchoolName @d.StudyMajor</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Experiences</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Experience</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Experiences)
+                            {
+                                <tr>
+                                    <td>@d.CompanyName @d.Position</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

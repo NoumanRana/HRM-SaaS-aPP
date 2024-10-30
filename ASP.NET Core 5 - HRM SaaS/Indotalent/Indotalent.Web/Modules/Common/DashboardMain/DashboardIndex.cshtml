@@ -1,0 +1,179 @@
+﻿@model Indotalent.Common.DashboardMain.DashboardPageModel
+
+@inject Serenity.ITextLocalizer Localizer
+@{
+	ViewData["Title"] = "Dashboard";
+	ViewData["PageId"] = "Dashboard";
+}
+
+@section Head {
+
+@Html.StyleBundle("Pages/Dashboard")
+@Html.ScriptBundle("Pages/Dashboard")
+
+<script type="text/javascript">
+    $(function(){
+
+		 $(".knob").knob({
+			'format' : function (value) {
+				return value + '%';
+			}
+		});
+
+		console.log(@(Html.Raw(Json.Serialize(Model.EmployeeGenderList))));
+	    Morris.Donut({
+          element: 'pie-chart-gender',
+          data: @(Html.Raw(Json.Serialize(Model.EmployeeGenderList)))
+        });
+
+	    Morris.Donut({
+          element: 'pie-chart-department',
+          data: @(Html.Raw(Json.Serialize(Model.EmployeeDepartmentList)))
+        });
+
+	    Morris.Donut({
+          element: 'pie-chart-designation',
+          data: @(Html.Raw(Json.Serialize(Model.EmployeeDesignationList)))
+        });
+
+	    Morris.Donut({
+          element: 'pie-chart-leave',
+          data: @(Html.Raw(Json.Serialize(Model.LeaveList)))
+        });
+
+		var data = @(Html.Raw(Json.Serialize(Model.lengthOfServices))),
+			config = {
+			data: data,
+			xkey: 'LOS',
+			ykeys: ['Year'],
+			labels: ['Length of Service'],
+			fillOpacity: 0.6,
+			lineColors: ['#efefef'],
+			lineWidth: 2,
+			hideHover: 'auto',
+			gridTextColor: "#fff",
+			gridStrokeWidth: 0.4,
+			pointSize: 4,
+			pointStrokeColors: ["#efefef"],
+			gridLineColor: "#efefef",
+			gridTextFamily: "Open Sans",
+			gridTextSize: 10
+		  };
+		config.element = 'los-chart';
+		Morris.Bar(config);
+    
+    });
+</script>
+
+}
+
+@section ContentHeader {
+
+}
+
+<div class="row">
+	<div class="col-lg-4">
+		<div class="small-box widget-bg-one">
+			<div class="inner">
+				<div id="pie-chart-gender" style="margin-left: auto; margin-right: auto; height: 150px; width: 150px;"></div>
+			</div>
+			<div class="icon">
+				<i class="ion ion-bag"></i>
+			</div>
+			<span>Employee by Gender</span>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="small-box widget-bg-one">
+			<div class="inner">
+				<div id="pie-chart-department" style="margin-left: auto; margin-right: auto; height: 150px; width: 150px;"></div>
+			</div>
+			<div class="icon">
+				<i class="ion ion-stats-bars"></i>
+			</div>
+			<span>Employee by Department</span>
+		</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="small-box widget-bg-one">
+			<div class="inner">
+				<div id="pie-chart-designation" style="margin-left: auto; margin-right: auto; height: 150px; width: 150px;"></div>
+			</div>
+			<div class="icon">
+				<i class="ion ion-stats-bars"></i>
+			</div>
+			<span>Employee by Designation</span>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col-lg-8">
+		<div class="box box-solid widget-bg-two">
+			<div class="box-header">
+				<i class="fa fa-th"></i>
+				<h3 class="box-title">Length of Service (LOS)</h3>
+			</div>
+			<div class="box-body border-radius-none">
+				<div class="chart" id="los-chart"></div>
+			</div>
+			<div class="box-footer no-border">
+				<div class="row">
+					<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+						<input type="text" class="knob" data-readonly="true" value="@((int)Model.ActiveCount)" data-width="60" data-height="60" data-fgColor="#899FD4">
+						<div class="knob-label">Active</div>
+					</div>
+					<div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
+						<input type="text" class="knob" data-readonly="true" value="@((int)Model.ResignationCount)" data-width="60" data-height="60" data-fgColor="#899FD4">
+						<div class="knob-label">Resignation</div>
+					</div>
+					<div class="col-xs-4 text-center">
+						<input type="text" class="knob" data-readonly="true" value="@((int)Model.TerminationCount)" data-width="60" data-height="60" data-fgColor="#899FD4">
+						<div class="knob-label">Termination</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-4">	
+		<div class="small-box widget-bg-three">
+			<div class="inner" style="text-align:center;">
+				<h3>@Model.AppraisalCount</h3>
+				<p>Appraisal</p>
+			</div>
+			<div class="icon">
+				<i class="ion ion-bag"></i>
+			</div>
+		</div>
+		<div class="small-box widget-bg-three">
+			<div class="inner" style="text-align:center;">
+				<h3>@Model.PromotionCount</h3>
+				<p>Promotion</p>
+			</div>
+			<div class="icon">
+				<i class="ion ion-bag"></i>
+			</div>
+		</div>
+		<div class="small-box widget-bg-three">
+			<div class="inner" style="text-align:center;">
+				<h3>@Model.TransferCount</h3>
+				<p>Transfer</p>
+			</div>
+			<div class="icon">
+				<i class="ion ion-bag"></i>
+			</div>
+		</div>
+		<div class="small-box widget-bg-two">
+			<div class="inner">
+				<div id="pie-chart-leave" style="margin-left: auto; margin-right: auto; height: 150px; width: 150px;"></div>
+			</div>
+			<div class="icon">
+				<i class="ion ion-stats-bars"></i>
+			</div>
+			<span>Leave Request by Type</span>
+		</div>
+	</div>
+</div>
+
+
+
+

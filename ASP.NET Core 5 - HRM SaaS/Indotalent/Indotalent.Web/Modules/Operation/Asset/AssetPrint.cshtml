@@ -1,0 +1,90 @@
+﻿@model Indotalent.Operation.AssetPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Asset: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.Description</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Asset Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Tag Number:</td>
+                        <td>@Model.Header.AssetTagNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Serial Number:</td>
+                        <td>@Model.Header.SerialNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Model:</td>
+                        <td>@Model.Header.Model</td>
+                    </tr>
+                    <tr>
+                        <td>Production Year:</td>
+                        <td>@Model.Header.ProductionYear</td>
+                    </tr>
+                    <tr>
+                        <td>Manufactur:</td>
+                        <td>@Model.Header.Manufacturer</td>
+                    </tr>
+                    <tr>
+                        <td>Support Center:</td>
+                        <td>@Model.Header.SupportCenter</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Procurement Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Purchase Date:</td>
+                        <td>@Model.Header.PurchaseDate</td>
+                    </tr>
+                    <tr>
+                        <td>Purchase Order:</td>
+                        <td>@Model.Header.PurchaseOrderNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Bill:</td>
+                        <td>@Model.Header.PurchaseOrderBill</td>
+                    </tr>
+                    <tr>
+                        <td>Purchase Price:</td>
+                        <td>@Model.Header.PurchasePrice.Value.ToString("##,##.00")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+        </div>
+        <div class="col-xs-12">
+        </div>
+    </div>
+</section>

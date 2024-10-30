@@ -1,0 +1,94 @@
+﻿@model Indotalent.Operation.ComplaintPrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                Complaint: @Model.Header.Number
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Reporter Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Name:</td>
+                        <td>@Model.Header.ReporterName</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td>@Model.Header.DepartmentName</td>
+                    </tr>
+                    <tr>
+                        <td>Branch:</td>
+                        <td>@Model.Header.BranchName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Complaint Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Location:</td>
+                        <td>@Model.Header.Location</td>
+                    </tr>
+                    <tr>
+                        <td>Date:</td>
+                        <td>@Model.Header.IncidentDate</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Witness Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Witness:</td>
+                        <td>@Html.Raw(Model.Header.Witness)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Incident Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Incident:</td>
+                        <td>@Html.Raw(Model.Header.IncidentDescription)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Resolve Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Suggestions:</td>
+                        <td>@Html.Raw(Model.Header.ResolveSuggestion)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

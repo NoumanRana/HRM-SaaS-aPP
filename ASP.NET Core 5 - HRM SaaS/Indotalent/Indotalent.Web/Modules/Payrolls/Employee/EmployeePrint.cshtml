@@ -1,0 +1,149 @@
+﻿@model Indotalent.Payrolls.EmployeePrintData
+
+@if ((bool?)ViewData["Printing"] == true)
+{
+    Layout = "_LayoutNoNavigation";
+}
+
+<section class="invoice">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="page-header">
+                EMPLOYEE PROFILE
+                <small class="pull-right">Print at: @DateTime.Now.ToShortDateString()</small>
+            </h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            <h3>@Model.Header.Name</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 text-center">
+            @if (!String.IsNullOrWhiteSpace(Model.Header.Picture))
+            {
+                <img src="@($"/upload/{Model.Header.Picture}")" height="100" width="100" />
+            }
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Employee Info</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Employee Name:</td>
+                        <td>@Model.Header.Name</td>
+                    </tr>
+                    <tr>
+                        <td>Employee Number:</td>
+                        <td>@Model.Header.EmployeeNumber</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                        <td>@Model.Header.DepartmentName</td>
+                    </tr>
+                    <tr>
+                        <td>Grade:</td>
+                        <td>@Model.Header.GradeName</td>
+                    </tr>
+                    <tr>
+                        <td>Designation:</td>
+                        <td>@Model.Header.DesignationName</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Employee Address</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Street:</td>
+                        <td>@Model.Header.Street</td>
+                    </tr>
+                    <tr>
+                        <td>City:</td>
+                        <td>@Model.Header.City</td>
+                    </tr>
+                    <tr>
+                        <td>State:</td>
+                        <td>@Model.Header.State</td>
+                    </tr>
+                    <tr>
+                        <td>Phone:</td>
+                        <td>@Model.Header.Phone</td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>@Model.Header.Email</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <h5>Payroll</h5>
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td style="width:50%">Basic Salary:</td>
+                        <td>@Model.Header.BasicSalary.ToStringDefault("#,##0.00")</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Income</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Income Name</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Incomes)
+                            {
+                                <tr>
+                                    <td>@d.IncomeName</td>
+                                    <td>@(d.Amount.ToStringDefault("#,##0.00"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h5>Deduction</h5>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Deduction Name</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var d in Model.Deductions)
+                            {
+                                <tr>
+                                    <td>@d.DeductionName</td>
+                                    <td>@(d.Amount.ToStringDefault("#,##0.00"))</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
