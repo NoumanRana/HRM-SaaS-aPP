@@ -1,0 +1,67 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SaaS HRM Project\\HRM-SaaS-aPP\\ASP.NET Core 5 - HRM SaaS\\Indotalent\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F3C94C56-5063-42B7-AB8F-A33A0F8D94B0}|Indotalent.Web\\Indotalent.Web.csproj|D:\\SaaS HRM Project\\HRM-SaaS-aPP\\ASP.NET Core 5 - HRM SaaS\\Indotalent\\indotalent.web\\modules\\payrolls\\deduction\\deductionrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F3C94C56-5063-42B7-AB8F-A33A0F8D94B0}|Indotalent.Web\\Indotalent.Web.csproj|solutionrelative:indotalent.web\\modules\\payrolls\\deduction\\deductionrow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DeductionRow.cs",
+              "DocumentMoniker": "D:\\SaaS HRM Project\\HRM-SaaS-aPP\\ASP.NET Core 5 - HRM SaaS\\Indotalent\\Indotalent.Web\\Modules\\Payrolls\\Deduction\\DeductionRow.cs",
+              "RelativeDocumentMoniker": "Indotalent.Web\\Modules\\Payrolls\\Deduction\\DeductionRow.cs",
+              "ToolTip": "D:\\SaaS HRM Project\\HRM-SaaS-aPP\\ASP.NET Core 5 - HRM SaaS\\Indotalent\\Indotalent.Web\\Modules\\Payrolls\\Deduction\\DeductionRow.cs",
+              "RelativeToolTip": "Indotalent.Web\\Modules\\Payrolls\\Deduction\\DeductionRow.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAAADkAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T03:01:23.065Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 86,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

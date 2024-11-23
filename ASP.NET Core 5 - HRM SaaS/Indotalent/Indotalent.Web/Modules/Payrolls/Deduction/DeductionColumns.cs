@@ -17,5 +17,8 @@ namespace Indotalent.Payrolls.Columns
         public String Name { get; set; }
         [Width(200)]
         public String TenantName { get; set; }
+
+        public Decimal DeductionRate { get; set; }
     }
+
 }

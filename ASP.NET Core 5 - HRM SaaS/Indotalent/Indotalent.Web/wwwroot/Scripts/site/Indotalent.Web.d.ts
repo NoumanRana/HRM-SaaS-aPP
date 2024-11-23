@@ -5472,6 +5472,7 @@ declare namespace Indotalent.Payrolls {
     interface DeductionForm {
         Name: Serenity.StringEditor;
         Description: Serenity.TextAreaEditor;
+        DeductionRate: Serenity.DecimalEditor;
     }
     class DeductionForm extends Serenity.PrefixedContext {
         static formKey: string;
@@ -5486,6 +5487,7 @@ declare namespace Indotalent.Payrolls {
         Description?: string;
         TenantId?: number;
         TenantName?: string;
+        DeductionRate?: number;
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -5507,6 +5509,7 @@ declare namespace Indotalent.Payrolls {
             Description = "Description",
             TenantId = "TenantId",
             TenantName = "TenantName",
+            DeductionRate = "DeductionRate",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",
@@ -7200,6 +7203,135 @@ declare namespace Indotalent.Payrolls {
             Retrieve = "Payrolls/Payroll/Retrieve",
             List = "Payrolls/Payroll/List",
             Currency = "Payrolls/Payroll/Currency"
+        }
+    }
+}
+declare namespace Indotalent.Payrolls {
+    class SalaryTaxSlabColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Payrolls {
+    interface SalaryTaxSlabForm {
+        From: Serenity.DecimalEditor;
+        To: Serenity.DecimalEditor;
+        ExemptedAmount: Serenity.DecimalEditor;
+        Rate: Serenity.DecimalEditor;
+    }
+    class SalaryTaxSlabForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Payrolls {
+    interface SalaryTaxSlabRow {
+        TaxSlabId?: number;
+        SlabRange?: string;
+        From?: number;
+        To?: number;
+        ExemptedAmount?: number;
+        Rate?: number;
+    }
+    namespace SalaryTaxSlabRow {
+        const idProperty = "TaxSlabId";
+        const nameProperty = "SlabRange";
+        const localTextPrefix = "Payrolls.SalaryTaxSlab";
+        const deletePermission = "Payrolls:SalaryTaxSlab";
+        const insertPermission = "Payrolls:SalaryTaxSlab";
+        const readPermission = "Payrolls:SalaryTaxSlab";
+        const updatePermission = "Payrolls:SalaryTaxSlab";
+        const enum Fields {
+            TaxSlabId = "TaxSlabId",
+            SlabRange = "SlabRange",
+            From = "From",
+            To = "To",
+            ExemptedAmount = "ExemptedAmount",
+            Rate = "Rate"
+        }
+    }
+}
+declare namespace Indotalent.Payrolls {
+    namespace SalaryTaxSlabService {
+        const baseUrl = "Payrolls/SalaryTaxSlab";
+        function Create(request: Serenity.SaveRequest<SalaryTaxSlabRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<SalaryTaxSlabRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<SalaryTaxSlabRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<SalaryTaxSlabRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Payrolls/SalaryTaxSlab/Create",
+            Update = "Payrolls/SalaryTaxSlab/Update",
+            Delete = "Payrolls/SalaryTaxSlab/Delete",
+            Retrieve = "Payrolls/SalaryTaxSlab/Retrieve",
+            List = "Payrolls/SalaryTaxSlab/List"
+        }
+    }
+}
+declare namespace Indotalent.Payrolls {
+    class ThresholdColumns {
+        static columnsKey: string;
+    }
+}
+declare namespace Indotalent.Payrolls {
+    interface ThresholdForm {
+        Name: Serenity.StringEditor;
+        Value: Serenity.DecimalEditor;
+        IsActive: Serenity.BooleanEditor;
+    }
+    class ThresholdForm extends Serenity.PrefixedContext {
+        static formKey: string;
+        private static init;
+        constructor(prefix: string);
+    }
+}
+declare namespace Indotalent.Payrolls {
+    interface ThresholdRow {
+        Id?: number;
+        Name?: string;
+        Value?: number;
+        IsActive?: boolean;
+        InsertUserId?: number;
+        InsertDate?: string;
+        UpdateUserId?: number;
+        UpdateDate?: string;
+    }
+    namespace ThresholdRow {
+        const idProperty = "Id";
+        const nameProperty = "Name";
+        const localTextPrefix = "Payrolls.Threshold";
+        const lookupKey = "Payrolls.Threshold";
+        function getLookup(): Q.Lookup<ThresholdRow>;
+        const deletePermission = "Payrolls:Threshold";
+        const insertPermission = "Payrolls:Threshold";
+        const readPermission = "Payrolls:Threshold";
+        const updatePermission = "Payrolls:Threshold";
+        const enum Fields {
+            Id = "Id",
+            Name = "Name",
+            Value = "Value",
+            IsActive = "IsActive",
+            InsertUserId = "InsertUserId",
+            InsertDate = "InsertDate",
+            UpdateUserId = "UpdateUserId",
+            UpdateDate = "UpdateDate"
+        }
+    }
+}
+declare namespace Indotalent.Payrolls {
+    namespace ThresholdService {
+        const baseUrl = "Payrolls/Threshold";
+        function Create(request: Serenity.SaveRequest<ThresholdRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Update(request: Serenity.SaveRequest<ThresholdRow>, onSuccess?: (response: Serenity.SaveResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Delete(request: Serenity.DeleteRequest, onSuccess?: (response: Serenity.DeleteResponse) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function Retrieve(request: Serenity.RetrieveRequest, onSuccess?: (response: Serenity.RetrieveResponse<ThresholdRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        function List(request: Serenity.ListRequest, onSuccess?: (response: Serenity.ListResponse<ThresholdRow>) => void, opt?: Q.ServiceOptions<any>): JQueryXHR;
+        const enum Methods {
+            Create = "Payrolls/Threshold/Create",
+            Update = "Payrolls/Threshold/Update",
+            Delete = "Payrolls/Threshold/Delete",
+            Retrieve = "Payrolls/Threshold/Retrieve",
+            List = "Payrolls/Threshold/List"
         }
     }
 }
@@ -11570,6 +11702,7 @@ declare namespace Indotalent.Payrolls {
         protected getLocalTextPrefix(): string;
         protected form: PayrollDetailForm;
         private loadedState;
+        static selectedEmployeeId: string;
         constructor();
         private recalculateIncome;
         private recalculateDeduction;
@@ -11607,6 +11740,20 @@ declare namespace Indotalent.Payrolls {
         protected getFormKey(): string;
         protected getLocalTextPrefix(): string;
         protected form: PayrollDetailDeductionForm;
+        private employee;
+        private totalAllowances;
+        private basicSalary;
+        private taxSlabs;
+        private allowanceThreshold;
+        constructor();
+        private fetchAllowanceThreshold;
+        private fetchTaxSlabs;
+        private findApplicableTaxSlab;
+        protected afterLoadEntity(): void;
+        private fetchEmployeeIncomes;
+        private calculatePAYE;
+        private calculateDeductionNewVersion;
+        private calculateDeductionAmount;
     }
 }
 declare namespace Indotalent.Payrolls {
@@ -11654,6 +11801,66 @@ declare namespace Indotalent.Payrolls {
         protected getLocalTextPrefix(): string;
         protected getService(): string;
         constructor(container: JQuery);
+    }
+}
+declare namespace Indotalent.Payrolls {
+    class SalaryTaxSlabDialog extends Serenity.EntityDialog<SalaryTaxSlabRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: SalaryTaxSlabForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
+    }
+}
+declare namespace Indotalent.Payrolls {
+    class SalaryTaxSlabGrid extends Serenity.EntityGrid<SalaryTaxSlabRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof SalaryTaxSlabDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
+    }
+}
+declare namespace Indotalent.Payrolls {
+    class ThresholdDialog extends Serenity.EntityDialog<ThresholdRow, any> {
+        protected getFormKey(): string;
+        protected getIdProperty(): string;
+        protected getLocalTextPrefix(): string;
+        protected getNameProperty(): string;
+        protected getService(): string;
+        protected getDeletePermission(): string;
+        protected getInsertPermission(): string;
+        protected getUpdatePermission(): string;
+        protected form: ThresholdForm;
+        private loadedState;
+        constructor();
+        getSaveState(): string;
+        loadResponse(data: any): void;
+    }
+}
+declare namespace Indotalent.Payrolls {
+    class ThresholdGrid extends Serenity.EntityGrid<ThresholdRow, any> {
+        protected getColumnsKey(): string;
+        protected getDialogType(): typeof ThresholdDialog;
+        protected getIdProperty(): string;
+        protected getInsertPermission(): string;
+        protected getLocalTextPrefix(): string;
+        protected getService(): string;
+        constructor(container: JQuery);
+        protected getColumns(): Slick.Column[];
+        protected getButtons(): Serenity.ToolButton[];
     }
 }
 declare namespace Indotalent.Performance {

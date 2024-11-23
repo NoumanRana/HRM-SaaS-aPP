@@ -5,6 +5,7 @@
         Description?: string;
         TenantId?: number;
         TenantName?: string;
+        DeductionRate?: number;
         InsertUserId?: number;
         InsertDate?: string;
         UpdateUserId?: number;
@@ -31,6 +32,7 @@
             Description = "Description",
             TenantId = "TenantId",
             TenantName = "TenantName",
+            DeductionRate = "DeductionRate",
             InsertUserId = "InsertUserId",
             InsertDate = "InsertDate",
             UpdateUserId = "UpdateUserId",

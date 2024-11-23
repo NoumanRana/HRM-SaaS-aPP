@@ -14,12 +14,15 @@
   </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\**\*.sql" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
+    <Content Remove="Modules\Payrolls\SalaryTaxSlab\SalaryTaxSlabIndex.cshtml" />
     <None Remove="Modules\Membership\Account\ForgotPassword\JazzForgotPasswordPanel.ts" />
     <None Remove="Modules\Membership\Account\JazzLoginPanel.ts" />
     <None Remove="Modules\Membership\Account\SignUp\JazzSignUpPanel.ts" />
     <TypeScriptCompile Remove="Modules\DialogUtils.ts" />
     <None Include="Modules\Attendance\Timesheet\TimesheetIndex.cshtml" />
     <None Include="Modules\EmployeeSelfService\Timesheet\TimesheetIndex.cshtml" />
+    <None Include="Modules\Payrolls\SalaryTaxSlab\SalaryTaxSlabIndex.cshtml" />
+    <None Include="Modules\Payrolls\Threshold\ThresholdIndex.cshtml" />
     <None Include="wwwroot\assets\fonts\datta\fonts\pct.svg" />
     <None Include="wwwroot\assets\fonts\feather\fonts\feather.svg" />
     <None Include="wwwroot\assets\plugins\jquery-scrollbar\js\jquery.scrollbar.min.js" />

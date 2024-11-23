@@ -490,6 +490,16 @@ namespace MVC
                 public const string PayrollDetailIncomeIndex = "~/Modules/Payrolls/PayrollDetailIncome/PayrollDetailIncomeIndex.cshtml";
             }
 
+            public static class SalaryTaxSlab
+            {
+                public const string SalaryTaxSlabIndex = "~/Modules/Payrolls/SalaryTaxSlab/SalaryTaxSlabIndex.cshtml";
+            }
+
+            public static class Threshold
+            {
+                public const string ThresholdIndex = "~/Modules/Payrolls/Threshold/ThresholdIndex.cshtml";
+            }
+
         }
 
         public static class Performance

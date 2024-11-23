@@ -17,5 +17,6 @@ namespace Indotalent.Payrolls.Forms
         public String Name { get; set; }
         [TextAreaEditor(Rows = 3)]
         public String Description { get; set; }
+        public Decimal DeductionRate { get; set; }
     }
 }

@@ -45,6 +45,12 @@ namespace Indotalent.Payrolls
             set { Fields.TenantId[this] = value; }
         }
 
+        [DisplayName("Rate"), Size(18), Scale(2)]
+        public Decimal? DeductionRate
+        {
+            get => fields.DeductionRate[this];
+            set => fields.DeductionRate[this] = value;
+        }
         [DisplayName("Tenant"), Expression("jTenant.TenantName")]
         public String TenantName
         {
@@ -74,6 +80,7 @@ namespace Indotalent.Payrolls
             public StringField Description;
             public Int32Field TenantId;
             public StringField TenantName;
+            public DecimalField DeductionRate;
         }
     }
 }

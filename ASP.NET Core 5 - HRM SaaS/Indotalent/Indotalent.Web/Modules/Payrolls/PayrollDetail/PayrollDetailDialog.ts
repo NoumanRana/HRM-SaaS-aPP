@@ -8,12 +8,14 @@ namespace Indotalent.Payrolls {
 
         protected form = new PayrollDetailForm(this.idPrefix);
         private loadedState: string;
+        public static selectedEmployeeId: string;
 
         constructor() {
             super();
 
             this.form.EmployeeId.changeSelect2(args => {
                 var employeeId = this.form.EmployeeId.value;
+                PayrollDetailDialog.selectedEmployeeId = employeeId;
                 if (Q.isEmptyOrNull(employeeId)) {
                     return;
                 }
